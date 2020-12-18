@@ -1,0 +1,48 @@
+#Program sistem informasi bank sampah
+#Program ini dibuat oleh Sulas Sri
+harga=0
+jenis=""
+pilihan = 1
+while pilihan !=0:  
+    print("\n=====PROGRAM SISTEM INFORMASI BANK SAMPAH=====")
+    print("\nProgram ini dibuat, untuk menampung dan mengolah sampah \nuntuk didaur ulang dan bisa dimanfaatkan kembali.")
+    print("\n===MENU===")
+    print("1. Admin / Pengelola")
+    print("2. Nasabah")
+    print("3. Keluar")
+    pil= int(input("Masukkan pilihan: "))
+    if pil == 1:
+        nama= input("Masukkan nama anda: ")
+        print ("Nama Admin ", nama)
+        print ("====Daftar jenis sampah dan harganya====")
+        print ("1. Sampah Plastik harganya 2000 per-kg.")
+        print ("2. Sampah Non Plastik harganya 5000 per-kg.")
+        print ("========================================")
+    elif pil == 2:
+        nama= input("Masukkan nama anda: ")
+        print ("Nama Nasabah ", nama)
+        print ("Jenis sampah yang akan disetorkan: ")
+        def pilihan (i):
+            switcher={
+                1: 'Sampah Plastik: 2000',
+                2: 'Sampah Non Plastik: 5000',
+            }
+            return switcher.get(i, "Input Salah")
+        print ("1. Sampah Plastik")
+        print ("2. Sampah Non Plastik")
+        print("")
+        nomor=int(input("Masukkan Pilihan: "))
+        menu=pilihan(nomor)
+        print(menu)
+        berat=int(input("Berapa berat sampah (kg): "))
+        if nomor == 1:
+            harga=harga+berat*2000
+            print("Harga sampah: ", harga)
+            jenis=("Sampah Plastik")
+        if nomor == 2:
+            harga=harga+berat*5000
+            print("Harga sampah: ", harga)
+            jenis=("Sampah Non Plastik")
+        print("========================================")
+    elif pil == 3:
+        break
